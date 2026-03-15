@@ -14,7 +14,6 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      # ဒါလေး ထပ်ဖြည့်လိုက်တာပါ (Flutter ကိရိယာတပ်ဆင်ခြင်း)
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
@@ -31,7 +30,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build Flet APK
-        run: flet build apk --project-name "REDashboard" --project-version "1.0.0"
+        run: flet build apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
