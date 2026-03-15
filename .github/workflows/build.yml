@@ -8,11 +8,17 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Java (Required for APK Build)
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
+
+      # ဒါလေး ထပ်ဖြည့်လိုက်တာပါ (Flutter ကိရိယာတပ်ဆင်ခြင်း)
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
 
       - name: Setup Python
         uses: actions/setup-python@v5
